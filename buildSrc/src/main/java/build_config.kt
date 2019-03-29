@@ -71,6 +71,8 @@ object Config {
     object TestDependencies {
         // JUNIT
         const val jUnit = "junit:junit:4.12"
+
+        // ANDROID SUPPORT RUNNER
         const val androidTestRunner = "com.android.support.test:runner:1.0.2"
     }
 

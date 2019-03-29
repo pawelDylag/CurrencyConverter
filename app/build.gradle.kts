@@ -53,4 +53,7 @@ dependencies {
     kapt(Config.Dependencies.roomCompiler)
 
     testImplementation(Config.TestDependencies.jUnit)
+    androidTestImplementation(Config.TestDependencies.androidTestRunner)
 }
+
+
