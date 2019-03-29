@@ -30,9 +30,12 @@ dependencies {
     implementation(Config.Dependencies.constraintLayout)
     implementation(Config.Dependencies.appCompat)
     implementation(Config.Dependencies.recyclerView)
+    implementation(Config.Dependencies.lifecycleExtensions)
+    implementation(Config.Dependencies.lifecycleExtensionsReactiveStreams)
     implementation(Config.Dependencies.rxAndroid)
     implementation(Config.Dependencies.rxJava)
     implementation(Config.Dependencies.dagger)
     implementation(Config.Dependencies.daggerSupport)
     annotationProcessor(Config.Dependencies.daggerAnnotationProcessor)
+    kapt(Config.Dependencies.lifecycleJava8AnnotationProcessor)
 }

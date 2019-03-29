@@ -37,6 +37,10 @@ object Config {
         const val dagger = "com.google.dagger:dagger-android:2.15"
         const val daggerSupport = "com.google.dagger:dagger-android-support:2.15"
         const val daggerAnnotationProcessor = "com.google.dagger:dagger-android-processor:2.15"
+        // LIFECYCLE
+        const val lifecycleExtensions = "androidx.lifecycle:lifecycle-extensions:2.0.0"
+        const val lifecycleJava8AnnotationProcessor = "androidx.lifecycle:lifecycle-common-java8:2.0.0"
+        const val lifecycleExtensionsReactiveStreams = "androidx.lifecycle:lifecycle-reactivestreams-ktx:2.0.0"
     }
 
     object TestDependencies {
