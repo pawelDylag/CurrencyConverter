@@ -27,10 +27,9 @@ android {
 
 dependencies {
     implementation(Config.Dependencies.kotlinStdLib)
-    implementation(Config.Dependencies.supportAppCompat)
     implementation(Config.Dependencies.constraintLayout)
-    testImplementation(Config.TestDependencies.jUnit)
-    androidTestImplementation(Config.TestDependencies.androidTestRunner)
+    implementation(Config.Dependencies.appCompat)
+    implementation(Config.Dependencies.recyclerView)
     implementation(Config.Dependencies.rxAndroid)
     implementation(Config.Dependencies.rxJava)
     implementation(Config.Dependencies.dagger)
