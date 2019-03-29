@@ -32,21 +32,21 @@ class CurrencyConverterRecyclerAdapter(
     private val textWatcher = CurrencyAmountTextWatcher(onBaseAmountChanged)
 
     fun updateItems(newItems: List<CurrencyViewItemModel>) {
-        val diffCallback = CurrencyItemDiffUtil(this.items, newItems)
-        val diffResult = DiffUtil.calculateDiff(diffCallback)
-        diffResult.dispatchUpdatesTo(this)
+        DiffUtil
+            .calculateDiff(CurrencyItemDiffUtil(this.items, newItems))
+            .dispatchUpdatesTo(this)
         scrollToTopIfBaseCurrencyHasChanged(items, newItems)
         this.items = newItems
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CurrencyViewHolder =
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         CurrencyViewHolder(parent.inflate(R.layout.currency_converter_recycler_item, false))
 
-    override fun getItemCount(): Int = items.size
+    override fun getItemCount() =
+        items.size
 
-    override fun getItemId(position: Int): Long {
-        return items[position].currencyModel.hashCode().toLong()
-    }
+    override fun getItemId(position: Int) =
+        items[position].currencyModel.hashCode().toLong()
 
     override fun onBindViewHolder(holder: CurrencyViewHolder, position: Int) {
         with(items[position]) {
@@ -109,11 +109,11 @@ class CurrencyConverterRecyclerAdapter(
     private fun MutableList<CurrencyViewItemDifference>.squashToMostRecentDifference(): CurrencyViewItemDifference =
         CurrencyViewItemDifference(this.first().old, this.last().new)
 
+    private fun ViewGroup.inflate(@LayoutRes layoutRes: Int, attachToRoot: Boolean = false): View {
+        return LayoutInflater.from(context).inflate(layoutRes, this, attachToRoot)
+    }
 }
 
-private fun ViewGroup.inflate(@LayoutRes layoutRes: Int, attachToRoot: Boolean = false): View {
-    return LayoutInflater.from(context).inflate(layoutRes, this, attachToRoot)
-}
 
 class CurrencyViewHolder(
     view: View,
