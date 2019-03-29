@@ -43,7 +43,6 @@ class CurrencyConverterRecyclerAdapter(
         override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
             s?.let {
                 if (it.isNotEmpty() && it.isNotBlank()) {
-                    logger.debug("New input: $it")
                     onBaseAmountChanged(BigDecimal(s.toString()))
                 } else if (it.isBlank()){
                     onBaseAmountChanged(BigDecimal.ZERO)
@@ -76,7 +75,6 @@ class CurrencyConverterRecyclerAdapter(
             holder.setCurrencyName(currencyModel.currency.displayName)
             loadItemImage(this, holder.currencyImage)
             holder.amountEditText.setOnFocusChangeListener { view, hasFocus ->
-                logger.debug("New focus change: hasFocus = $hasFocus")
                 if (hasFocus) {
                     itemBeingEdited = this
                     holder.amountEditText.setSelection(holder.amountEditText.length())

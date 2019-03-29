@@ -38,9 +38,6 @@ class NetworkAndLocalStorageCurrencyRepository @Inject constructor(
     override fun observeCurrenciesListModifications(): Flowable<ModifiedCurrenciesModel> =
         localStorageService.observeCurrencyListModifications().map {
             ModifiedCurrenciesModel(it)
-        }.doOnNext {
-            logger.debug("Got new modifications list: ${it.currenciesByTimestamp.toList().joinToString {
-                "${it.first.currency.currencyCode} : ${it.second}" }}")
         }
 
     override fun observeCurrencyExchangeRates(
@@ -54,9 +51,10 @@ class NetworkAndLocalStorageCurrencyRepository @Inject constructor(
 
 
     override fun observeUserDefinedCurrencyAmount(): Flowable<BigDecimal> =
-        localStorageService.observeUserDefinedCurrencyAmount().doOnNext {
-            logger.debug("Got new user currency amount: $it")
-        }
+        localStorageService.observeUserDefinedCurrencyAmount()
+            .doOnNext {
+                logger.debug("Got new user currency amount: $it")
+            }
 
     override fun setUserDefinedCurrency(currency: CurrencyModel) =
         localStorageService.setUserDefinedCurrency(currency)

@@ -32,7 +32,8 @@ abstract class AppDatabase : RoomDatabase() {
         private val logger = createLogger(this::class.java)
 
         fun create(applicationContext: Context): AppDatabase {
-            var provideRoomDb: () -> Single<AppDatabase> = { Single.error(Throwable("App database is not yet created"))}
+            var provideRoomDb: () -> Single<AppDatabase> =
+                { Single.error(Throwable("App database is not yet created")) }
             return Room.databaseBuilder(
                 applicationContext,
                 AppDatabase::class.java, "currency_converter_database"
@@ -45,10 +46,10 @@ abstract class AppDatabase : RoomDatabase() {
                             insert(CurrencyConverterDataEntity(0, "EUR", "1.0"))
                         }
                     }.subscribeOn(Schedulers.io()).subscribe(
-                        { logger.debug("Populated database with initial data.") },
+                        { logger.debug("Populated db with initial data.") },
                         { logger.error("Unable to populate db with initial data: ${it.message}") })
                 }
-            }).build().also { provideRoomDb = {Single.just(it)} }
+            }).build().also { provideRoomDb = { Single.just(it) } }
 
         }
 

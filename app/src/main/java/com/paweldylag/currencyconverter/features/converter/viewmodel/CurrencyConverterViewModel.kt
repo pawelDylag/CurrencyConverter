@@ -116,16 +116,12 @@ class CurrencyConverterViewModel @Inject constructor(
     private fun processRepositoryChange(repositoryState: CurrencyRepositoryState) =
         with(repositoryState) {
             sortCurrenciesByLastModificationTimestamp()
-                .also {
-                    logger.debug(it.joinToString{"${it.currencyModel.currency.currencyCode}:${it.amount}"})
-                }
                 .asSequence()
                 .divideAllCurrenciesRatesBySelectedCurrencyRate(userBaseCurrencyExchangeRate)
                 .multiplyAllCurrenciesRatesBySelectedAmount(userBaseAmount)
                 .mapToCurrencyConverterViewItems()
-                .toList().also {
-                    logger.debug(it.joinToString{"${it.currencyModel.currency.currencyCode}:${it.currencyAmount}"})
-                }
+                .toList()
+                .logDebug()
         }
 
     private fun Sequence<CurrencyItemModel>.multiplyAllCurrenciesRatesBySelectedAmount(baseAmount: BigDecimal) =
@@ -181,6 +177,12 @@ class CurrencyConverterViewModel @Inject constructor(
             currencyModel,
             amount.toString()
         )
+
+    private fun List<CurrencyViewItemModel>.logDebug() =
+        also {
+            logger.debug(it.joinToString{"${it.currencyModel.currency.currencyCode}:${it.currencyAmount}"})
+        }
+
 
     /**
      * Demo purposes:
