@@ -24,9 +24,8 @@ object Config {
     }
 
     object Dependencies {
+        // KOTLIN
         const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
-        const val supportAppCompat = "com.android.support:appcompat-v7:28.0.0"
-        const val constraintLayout = "com.android.support.constraint:constraint-layout:1.1.3"
         const val rxAndroid = "io.reactivex.rxjava2:rxandroid:2.0.1"
         const val rxJava = "io.reactivex.rxjava2:rxjava:2.2.1"
         const val dagger = "com.google.dagger:dagger-android:2.15"
