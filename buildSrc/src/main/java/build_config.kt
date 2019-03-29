@@ -42,6 +42,12 @@ object Config {
         const val daggerAndroid = "com.google.dagger:dagger-android:${Versions.daggerVersion}"
         const val daggerSupport = "com.google.dagger:dagger-android-support:${Versions.daggerVersion}"
         const val daggerAnnotationProcessor = "com.google.dagger:dagger-android-processor:${Versions.daggerVersion}"
+
+        // RETROFIT
+        const val retrofit = "com.squareup.retrofit2:retrofit:2.5.0"
+        const val retrofitRx = "com.squareup.retrofit2:adapter-rxjava2:2.5.0"
+        const val retrofitGson = "com.squareup.retrofit2:converter-gson:2.5.0"
+
         // ROOM
         const val roomRuntime = "androidx.room:room-runtime:${Versions.roomVersion}"
         const val roomCompiler = "androidx.room:room-compiler:${Versions.roomVersion}"
