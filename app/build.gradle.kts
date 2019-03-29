@@ -51,4 +51,6 @@ dependencies {
     kapt(Config.Dependencies.daggerCompiler)
     kapt(Config.Dependencies.lifecycleJava8AnnotationProcessor)
     kapt(Config.Dependencies.roomCompiler)
+
+    testImplementation(Config.TestDependencies.jUnit)
 }
