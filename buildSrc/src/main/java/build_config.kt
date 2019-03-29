@@ -74,6 +74,9 @@ object Config {
 
         // ANDROID SUPPORT RUNNER
         const val androidTestRunner = "com.android.support.test:runner:1.0.2"
+
+        // MOCKK
+        const val mockk = "io.mockk:mockk:1.9.2.kotlin12"
     }
 
     object Versions {
