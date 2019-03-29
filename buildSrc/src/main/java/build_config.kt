@@ -58,6 +58,11 @@ object Config {
         const val lifecycleExtensions = "androidx.lifecycle:lifecycle-extensions:2.0.0"
         const val lifecycleJava8AnnotationProcessor = "androidx.lifecycle:lifecycle-common-java8:2.0.0"
         const val lifecycleExtensionsReactiveStreams = "androidx.lifecycle:lifecycle-reactivestreams-ktx:2.0.0"
+
+        // SKALD
+        const val skald = "com.wojtek.wawerek:skald-kotlin:0.3.1"
+        const val skaldLogcat = "com.wojtek.wawerek:skald-logcat-plugin:0.1.0"
+
     }
 
     object TestDependencies {

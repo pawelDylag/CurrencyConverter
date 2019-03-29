@@ -37,6 +37,8 @@ dependencies {
     implementation(Config.Dependencies.dagger)
     implementation(Config.Dependencies.daggerAndroid)
     implementation(Config.Dependencies.daggerSupport)
+    implementation(Config.Dependencies.skald)
+    implementation(Config.Dependencies.skaldLogcat)
     implementation(Config.Dependencies.roomRuntime)
     implementation(Config.Dependencies.roomKtx)
     implementation(Config.Dependencies.roomRx)
