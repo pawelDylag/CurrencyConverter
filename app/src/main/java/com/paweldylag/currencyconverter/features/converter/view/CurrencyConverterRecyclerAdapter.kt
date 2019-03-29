@@ -1,7 +1,5 @@
 package com.paweldylag.currencyconverter.features.converter.view
 
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,25 +29,7 @@ class CurrencyConverterRecyclerAdapter(
 
     private val logger = createLogger(this::class.java)
     private var itemBeingEdited: CurrencyViewItemModel? = null
-    private val textWatcher = object : TextWatcher {
-        override fun afterTextChanged(s: Editable?) {
-            // do nothing
-        }
-
-        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            // do nothing
-        }
-
-        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-            s?.let {
-                if (it.isNotEmpty() && it.isNotBlank()) {
-                    onBaseAmountChanged(BigDecimal(s.toString()))
-                } else if (it.isBlank()){
-                    onBaseAmountChanged(BigDecimal.ZERO)
-                }
-            }
-        }
-    }
+    private val textWatcher = CurrencyAmountTextWatcher(onBaseAmountChanged)
 
     fun updateItems(newItems: List<CurrencyViewItemModel>) {
         val diffCallback = CurrencyItemDiffUtil(this.items, newItems)
