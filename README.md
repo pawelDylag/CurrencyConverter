@@ -1,10 +1,8 @@
 # Currency Converter
 **Version:** 1.0.0
-*Note: Git history and commit names are to be changed. For now I use just `WIP` messages.*
  
 **This is a simple currency converter that allows user to choose base currency and base value.
-All currency exchange rates are applied in realtime from the external API.**
-
+All currency exchange rates are applied in realtime from an external API.**
 
 ## Architecture
 This app is written using `MVVM` pattern. In case of a much bigger app, I'd rather extract `Interactors` or `UseCases`, but it's just a demo, so I used `CurrencyConverterViewModel` to wrap business logic. Every network/storage interaction is hidden behind `Repository` pattern, so it's independent from the rest of app.
@@ -139,3 +137,4 @@ I just haven't had much time to add everything (because it's just a quick demo) 
 
 ## Feedback 
 I'm super excited to get all the feedback available :) 
+
