@@ -37,7 +37,11 @@ dependencies {
     implementation(Config.Dependencies.dagger)
     implementation(Config.Dependencies.daggerAndroid)
     implementation(Config.Dependencies.daggerSupport)
+    implementation(Config.Dependencies.roomRuntime)
+    implementation(Config.Dependencies.roomKtx)
+    implementation(Config.Dependencies.roomRx)
     kapt(Config.Dependencies.daggerAnnotationProcessor)
     kapt(Config.Dependencies.daggerCompiler)
     kapt(Config.Dependencies.lifecycleJava8AnnotationProcessor)
+    kapt(Config.Dependencies.roomCompiler)
 }

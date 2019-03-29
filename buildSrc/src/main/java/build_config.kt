@@ -42,6 +42,12 @@ object Config {
         const val daggerAndroid = "com.google.dagger:dagger-android:${Versions.daggerVersion}"
         const val daggerSupport = "com.google.dagger:dagger-android-support:${Versions.daggerVersion}"
         const val daggerAnnotationProcessor = "com.google.dagger:dagger-android-processor:${Versions.daggerVersion}"
+        // ROOM
+        const val roomRuntime = "androidx.room:room-runtime:${Versions.roomVersion}"
+        const val roomCompiler = "androidx.room:room-compiler:${Versions.roomVersion}"
+        const val roomKtx = "androidx.room:room-ktx:${Versions.roomVersion}"
+        const val roomRx = "androidx.room:room-rxjava2:${Versions.roomVersion}"
+
         // LIFECYCLE
         const val lifecycleExtensions = "androidx.lifecycle:lifecycle-extensions:2.0.0"
         const val lifecycleJava8AnnotationProcessor = "androidx.lifecycle:lifecycle-common-java8:2.0.0"
@@ -55,6 +61,7 @@ object Config {
 
     object Versions {
         const val daggerVersion = "2.21"
+        const val roomVersion = "2.1.0-alpha06"
     }
 
 }
