@@ -45,6 +45,8 @@ dependencies {
     implementation(Config.Dependencies.retrofit)
     implementation(Config.Dependencies.retrofitRx)
     implementation(Config.Dependencies.retrofitGson)
+    implementation(Config.Dependencies.picasso)
+    implementation(Config.Dependencies.picassoTransformations)
     kapt(Config.Dependencies.daggerAnnotationProcessor)
     kapt(Config.Dependencies.daggerCompiler)
     kapt(Config.Dependencies.lifecycleJava8AnnotationProcessor)

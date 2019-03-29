@@ -63,6 +63,9 @@ object Config {
         const val skald = "com.wojtek.wawerek:skald-kotlin:0.3.1"
         const val skaldLogcat = "com.wojtek.wawerek:skald-logcat-plugin:0.1.0"
 
+        // PICASSO
+        const val picasso = "com.squareup.picasso:picasso:2.71828"
+        const val picassoTransformations = "jp.wasabeef:picasso-transformations:2.2.1"
     }
 
     object TestDependencies {
