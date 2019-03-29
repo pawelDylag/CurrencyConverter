@@ -35,7 +35,9 @@ dependencies {
     implementation(Config.Dependencies.rxAndroid)
     implementation(Config.Dependencies.rxJava)
     implementation(Config.Dependencies.dagger)
+    implementation(Config.Dependencies.daggerAndroid)
     implementation(Config.Dependencies.daggerSupport)
-    annotationProcessor(Config.Dependencies.daggerAnnotationProcessor)
+    kapt(Config.Dependencies.daggerAnnotationProcessor)
+    kapt(Config.Dependencies.daggerCompiler)
     kapt(Config.Dependencies.lifecycleJava8AnnotationProcessor)
 }

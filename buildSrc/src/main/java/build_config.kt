@@ -32,11 +32,16 @@ object Config {
         const val appCompat = "androidx.appcompat:appcompat:1.0.2"
         const val constraintLayout = "androidx.constraintlayout:constraintlayout:1.1.3"
 
+        // RX
         const val rxAndroid = "io.reactivex.rxjava2:rxandroid:2.0.1"
         const val rxJava = "io.reactivex.rxjava2:rxjava:2.2.1"
-        const val dagger = "com.google.dagger:dagger-android:2.15"
-        const val daggerSupport = "com.google.dagger:dagger-android-support:2.15"
-        const val daggerAnnotationProcessor = "com.google.dagger:dagger-android-processor:2.15"
+
+        // DAGGER
+        const val dagger = "com.google.dagger:dagger:${Versions.daggerVersion}"
+        const val daggerCompiler = "com.google.dagger:dagger-compiler:${Versions.daggerVersion}"
+        const val daggerAndroid = "com.google.dagger:dagger-android:${Versions.daggerVersion}"
+        const val daggerSupport = "com.google.dagger:dagger-android-support:${Versions.daggerVersion}"
+        const val daggerAnnotationProcessor = "com.google.dagger:dagger-android-processor:${Versions.daggerVersion}"
         // LIFECYCLE
         const val lifecycleExtensions = "androidx.lifecycle:lifecycle-extensions:2.0.0"
         const val lifecycleJava8AnnotationProcessor = "androidx.lifecycle:lifecycle-common-java8:2.0.0"
@@ -46,6 +51,10 @@ object Config {
     object TestDependencies {
         const val jUnit = "junit:junit:4.12"
         const val androidTestRunner = "com.android.support.test:runner:1.0.2"
+    }
+
+    object Versions {
+        const val daggerVersion = "2.21"
     }
 
 }
