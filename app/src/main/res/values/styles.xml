@@ -8,4 +8,21 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="CurrencyCodeTextStyle" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="CurrencyFullNameStyle" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/colorSubtext</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="CurrencyAmountEditStyle" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:inputType">numberDecimal</item>
+        <item name="android:maxLength">11</item>
+    </style>
+
 </resources>
