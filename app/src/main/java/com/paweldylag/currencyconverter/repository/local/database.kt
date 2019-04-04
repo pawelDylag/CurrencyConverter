@@ -41,18 +41,22 @@ abstract class AppDatabase : RoomDatabase() {
                 @SuppressLint("CheckResult")
                 override fun onCreate(db: SupportSQLiteDatabase) {
                     super.onCreate(db)
-                    provideRoomDb().map {
-                        it.currencyConverterDataDao().apply {
-                            insert(CurrencyConverterDataEntity(0, "EUR", "1.0"))
-                        }
-                    }.subscribeOn(Schedulers.io()).subscribe(
-                        { logger.debug("Populated db with initial data.") },
-                        { logger.error("Unable to populate db with initial data: ${it.message}") })
+                    provideRoomDb()
+                        .prepopulateAppDefaultData()
+                        .subscribeOn(Schedulers.io())
+                        .subscribe(
+                            { logger.debug("Populated db with initial data.") },
+                            { logger.error("Unable to populate db with initial data: ${it.message}") })
                 }
-            }).build().also { provideRoomDb = { Single.just(it) } }
+            }).build()
+                .also { provideRoomDb = { Single.just(it) } }
 
         }
 
+        private fun Single<AppDatabase>.prepopulateAppDefaultData() =
+            flatMapCompletable {
+                it.currencyConverterDataDao().insert(CurrencyConverterDataEntity(0, "EUR", "1.0"))
+            }
 
     }
 }
