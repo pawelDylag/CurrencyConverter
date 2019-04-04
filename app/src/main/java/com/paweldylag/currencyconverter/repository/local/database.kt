@@ -29,6 +29,7 @@ abstract class AppDatabase : RoomDatabase() {
 
     companion object {
 
+        private const val DB_NAME = "currency_converter_database"
         private val logger = createLogger(this::class.java)
 
         fun create(applicationContext: Context): AppDatabase {
@@ -36,7 +37,8 @@ abstract class AppDatabase : RoomDatabase() {
                 { Single.error(Throwable("App database is not yet created")) }
             return Room.databaseBuilder(
                 applicationContext,
-                AppDatabase::class.java, "currency_converter_database"
+                AppDatabase::class.java,
+                DB_NAME
             ).addCallback(object : RoomDatabase.Callback() {
                 @SuppressLint("CheckResult")
                 override fun onCreate(db: SupportSQLiteDatabase) {
