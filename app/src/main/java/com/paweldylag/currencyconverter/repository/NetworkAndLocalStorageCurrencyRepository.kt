@@ -24,6 +24,7 @@ class NetworkAndLocalStorageCurrencyRepository @Inject constructor(
     override fun getCurrencyExchangeRates(base: CurrencyModel): Single<ExchangeRatesModel> =
         networkService.getCurrencyExchangeRates(base)
             .doOnSuccess {
+                logger.debug("Got new exchange rates from network.")
                 localStorageService.updateCurrencyExchangeRates(it)
             }
             .onErrorResumeNext {
@@ -37,6 +38,7 @@ class NetworkAndLocalStorageCurrencyRepository @Inject constructor(
 
     override fun observeCurrenciesListModifications(): Flowable<ModifiedCurrenciesModel> =
         localStorageService.observeCurrencyListModifications().map {
+            logger.debug("Got new currency list modifications update.")
             ModifiedCurrenciesModel(it)
         }
 
